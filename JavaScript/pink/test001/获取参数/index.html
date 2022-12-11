@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    您获取的颜色为<span></span>
+    <br />
+    <button>跳转</button>
+
+    <script>
+        var args = window.location.search;
+        args = args.substr(1,args.length);
+        args = args.split('=');
+        var span = window.document.querySelector('span');
+        span.innerHTML = args[1];
+
+        var btn = document.querySelector('button');
+        btn.addEventListener('click',function() {
+            location.assign('http://store.19marken.top/admin');
+        });
+    </script>
+</body>
+</html>

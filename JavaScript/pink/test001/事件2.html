@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件2</title>
+    <style>
+        input {
+            color: rgb(96, 88, 88);
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="手机" name="" id="">
+
+    <script>
+        var text = document.querySelector('input');
+        text.onfocus = function() {
+            this.style.color = 'rgb(0, 0, 0)';
+
+            if ('手机' == this.value) {
+                this.value = '';
+                console.log('获得了焦点');
+            } 
+        }
+
+        text.onblur = function() {
+            this.style.color = 'rgb(96, 88, 88)';
+
+            if ('' == this.value) {
+                this.value = '手机';  
+                console.log('失去了焦点');
+            } 
+        }
+    </script>
+</body>
+</html>

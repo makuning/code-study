@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>对象</title>
+        <script>
+            function Hero(name, type, blood) {
+                this.name = name;
+                this.type = type;
+                this.blood = blood;
+                this.attack = function(skill) {
+                    console.log(skill);
+                };
+                this.introduce = function() {
+                    console.log('名字：' + this.name);
+                    console.log('属性：' + this.type);
+                    console.log('血量：' + this.blood);
+                };
+            }
+
+            var me = new Hero('周星驰','射手',120);
+
+            for (var m in me) {
+                if ((typeof me[m]) === 'function') {
+                    me[m]('唱歌');
+                } else {
+                    console.log(me[m]);
+                }
+                
+            }
+
+           /*  var Dog = {
+                'name': '可可',
+                'type': '阿拉斯加犬',
+                'age': 5,
+                'color': '棕红色',
+                'bark': function() {
+                    alert('演电影');
+                },
+                'showFilm': function() {
+                    alert('演电影');
+                }
+            }
+
+            console.log(Dog.name);
+            console.log(Dog.type);
+            console.log(Dog.age);
+            console.log(Dog.color);
+
+            var obj = new Object();
+            obj.name = '鸣人';
+            obj.gender = '男';
+            obj.age = 19;
+            obj.skill = function() {
+                console.log('影分身术');
+                return 'hahah';
+            } */
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

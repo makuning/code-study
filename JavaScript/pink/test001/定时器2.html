@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器2</title>
+    <style>
+        div {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            font-size: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        span {
+            display: inline-block;
+            height: 40px;
+            width: 50px;
+            margin-right: 3px;
+            background-color: black;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 40px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+    <button id="begin">开始计时</button>
+    <br />
+    <button id="stop">停止计时</button>
+    <div>
+        <span class="day"></span>天
+        <span class="hour"></span>时
+        <span class="minute"></span>分
+        <span class="second"></span>秒
+    </div>
+
+    <script>
+        var daySpan = window.document.querySelector('.day');
+        var hourSpan = window.document.querySelector('.hour');
+        var minuteSpan = window.document.querySelector('.minute');
+        var secondSpan = window.document.querySelector('.second');
+
+        var inputTime = +new Date('2022-9-8 18:00:00');
+
+        window.addEventListener('load',countDown);
+        var timer = window.setInterval(countDown,1000);
+
+        function countDown() {
+            var nowTime = +new Date();
+            var time = (inputTime - nowTime) / 1000;
+
+            var day = parseInt(time / 60 / 60 / 24);
+            day = day < 10 ? '0' + day : day;
+            var hour = parseInt(time / 60 / 60 % 24);
+            hour = hour < 10 ? '0' + hour : hour;
+            var minute = parseInt(time / 60 % 60);
+            minute = minute < 10 ? '0' + minute : minute;
+            var second = parseInt(time % 60);
+            second = second < 10 ? '0' + second : second;
+
+            daySpan.innerHTML = day;
+            hourSpan.innerHTML = hour;
+            minuteSpan.innerHTML = minute;
+            secondSpan.innerHTML = second; 
+        }
+
+        var begin = window.document.querySelector('#begin');
+        var stop = window.document.querySelector('#stop');
+
+        begin.addEventListener('click',timerBegin);
+        stop.addEventListener('click',timerStop);
+
+        function timerBegin() {
+            timer = window.setInterval(countDown,1000);
+        }
+
+        function timerStop() {
+            window.clearInterval(timer);
+        }
+    </script>
+</body>
+</html>

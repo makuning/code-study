@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>评论</title>
+    <style>
+        #comment_list {
+            list-style: none;
+        }
+
+        .del {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="area" cols="30" rows="10"></textarea>
+    <button id="sendBtn">发送</button>
+
+    <ul id="comment_list">
+        <li>这是一条评论 <span class="del">X</span></li>
+    </ul>
+
+    <script>
+        var sendBtn = document.querySelector('#sendBtn');
+
+        sendBtn.onclick = function() {
+            var commentList = document.querySelector('#comment_list');
+            var area = document.querySelector('#area');
+            var text = area.value;
+            var li = document.createElement('li');
+            li.innerHTML = text + ' <span class="del">X</span>';
+
+            commentList.appendChild(li);
+
+            funDels();
+
+            area.value = '';
+        }
+
+        function funDels() {
+            var dels = document.querySelectorAll('.del');
+            
+            for (var index in dels) {
+                var del = dels[index];
+                del.onclick = function() {
+                    this.parentElement.remove();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

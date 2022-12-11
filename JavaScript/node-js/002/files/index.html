@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>素材</title>
+    <style>
+        input[type=text] {
+            width: 200px;
+            height: 20px;
+            font-size: 18px;
+
+        }
+
+        input[type=button] {
+            width: 50px;
+            height: 25px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <span>请输入：</span>
+    <input id="input" type="text" value="">
+    <input id="btn" type="button" value="提交">
+    <br />
+    <input id="output" type="text">
+
+    <script>
+        var input = window.document.querySelector('#input');
+        var output = window.document.querySelector('#output');
+        var btn = window.document.querySelector('#btn');
+
+        btn.addEventListener('click',function(event) {
+           output.value = input.value;
+        });
+    </script>
+</body>
+</html>

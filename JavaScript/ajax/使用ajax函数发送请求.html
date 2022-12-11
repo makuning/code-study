@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用ajax函数发送请求</title>
+    <script src="./lib/jquery-3.6.1.js"></script>
+</head>
+<body>
+    <button id="btn1">使用ajax函数发送GET请求</button>
+    <button id="btn2">使用ajax函数发送POST请求</button>
+
+    <script>
+        $(function() {
+            $('#btn1').on('click',function() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'https://api-v2.xdclass.net/api/course_stage/v1/find_self_study_by_type?type=BACKEND',
+                    data: {
+                        id: 1
+                    },
+                    success: function(res) {
+                        console.log(res);
+                    }
+                })
+            });
+
+            $('#btn2').on('click',function() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://api-v2.xdclass.net/api/course_stage/v1/find_self_study_by_type?type=BACKEND',
+                    data: {
+                        no: '2206831544',
+                        name: '马昆',
+                        age: 21,
+                        birthday: '2001/06/24'
+                    },
+                    success: function(res) {
+                        console.log(res);
+                    }
+                })
+            });
+        });
+    </script>
+</body>
+</html>

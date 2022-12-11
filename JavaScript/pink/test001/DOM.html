@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM对象</title>
+</head>
+<body>
+    <ui>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+    </ui>
+
+    <script>
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis instanceof Array);
+        for (var i in lis) {
+            console.log(lis[i]);
+        }
+
+        function Student(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        var arrs = [new Student('马昆'),new Student('马某人'),new Student('马某'),new Student('马牛逼')]
+        console.log(arrs);
+        console.log(arrs instanceof Array);
+
+        for (var i in arrs) {
+            console.log(arrs[i]);
+        }
+    </script>
+</body>
+</html>

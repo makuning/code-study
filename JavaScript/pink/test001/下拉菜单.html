@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单</title>
+    <style>
+        #nav {
+            text-align: center;
+        }
+
+        #nav > div {
+            height: 300px;
+            display: inline-block;
+        }
+
+        #nav > li{
+            font-size: 20px;
+            margin: 0px 5px;
+            display: inline-block;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            font-size: 16px;
+            text-align: center;
+            border: 1px solid red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div>
+            <a href="">一级菜单1</a>
+            <ul class="menu">
+                <li>二级菜单1</li>
+                <li>二级菜单2</li>
+                <li>二级菜单3</li>
+                <li>二级菜单4</li>
+            </ul>
+        </div>
+        <div>
+            <a href="">一级菜单2</a>
+            <ul class="menu">
+                <li>二级菜单1</li>
+                <li>二级菜单2</li>
+                <li>二级菜单3</li>
+                <li>二级菜单4</li>
+            </ul>
+        </div>
+        <div>
+            <a href="">一级菜单3</a>
+            <ul class="menu">
+                <li>二级菜单1</li>
+                <li>二级菜单2</li>
+                <li>二级菜单3</li>
+                <li>二级菜单4</li>
+            </ul>
+        </div>
+        <div>
+            <a href="">一级菜单4</a>
+            <ul class="menu">
+                <li>二级菜单1</li>
+                <li>二级菜单2</li>
+                <li>二级菜单3</li>
+                <li>二级菜单4</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var navs = document.querySelectorAll('#nav > div > a');
+        for (var index in navs) {
+            var nav = navs[index];
+            if (1 === nav.nodeType) {
+                nav.onmouseover = function() {
+                    this.nextElementSibling.style.display = 'block';
+                }   
+
+                nav.onmouseout = function() {
+
+                }
+            }
+        }
+    </script>
+</body>
+</html>
