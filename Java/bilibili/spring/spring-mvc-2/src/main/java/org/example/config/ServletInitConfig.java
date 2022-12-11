@@ -2,10 +2,7 @@ package org.example.config;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
-
 import javax.servlet.Filter;
-import javax.servlet.ServletConfig;
 
 /**
  * @author makun
@@ -20,7 +17,7 @@ public class ServletInitConfig extends AbstractAnnotationConfigDispatcherServlet
     }
 
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{ServletConfig.class};
+        return new Class[]{SpringMVCConfig.class};
     }
 
     protected String[] getServletMappings() {

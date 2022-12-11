@@ -1,0 +1,4 @@
+org\example\config\SpringMVCConfig.class
+org\example\domain\User.class
+org\example\controller\UserController.class
+org\example\config\ServletInitConfig.class
