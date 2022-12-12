@@ -11,7 +11,12 @@
         <module name="spring-mvc-2" />
         <module name="spring-aop" />
         <module name="spring-mvc" />
+        <module name="spring-mvc-3" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-mvc (1)" target="1.5" />
+      <module name="spring-mvc (2)" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
