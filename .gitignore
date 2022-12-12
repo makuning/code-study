@@ -1,4 +1,4 @@
 # .idea不提交
-*/.idea/
+.idea/*
 # target不提交
-*/target/
+target/*
