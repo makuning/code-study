@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/spring-boot-test-01/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-test-02/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-test-03/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-test-04/pom.xml" />
       </list>
     </option>
   </component>
